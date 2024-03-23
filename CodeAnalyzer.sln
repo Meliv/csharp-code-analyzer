@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAnalyzer", "CodeAnalyzer\CodeAnalyzer.csproj", "{15EA8B6F-3C65-4B4F-8055-3BCB2E30FE18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzer", "CodeAnalyzer\CodeAnalyzer.csproj", "{15EA8B6F-3C65-4B4F-8055-3BCB2E30FE18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAnalyzer.Models", "CodeAnalyzer.Models\CodeAnalyzer.Models.csproj", "{CEE85EC2-02EA-42A5-836A-A0439F6B7C42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAnalyzer.Repositories", "CodeAnalyzer.Repositories\CodeAnalyzer.Repositories.csproj", "{59F2E22F-12DC-4BEF-876B-EFF16F81F2B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{15EA8B6F-3C65-4B4F-8055-3BCB2E30FE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15EA8B6F-3C65-4B4F-8055-3BCB2E30FE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15EA8B6F-3C65-4B4F-8055-3BCB2E30FE18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE85EC2-02EA-42A5-836A-A0439F6B7C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE85EC2-02EA-42A5-836A-A0439F6B7C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE85EC2-02EA-42A5-836A-A0439F6B7C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE85EC2-02EA-42A5-836A-A0439F6B7C42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F2E22F-12DC-4BEF-876B-EFF16F81F2B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F2E22F-12DC-4BEF-876B-EFF16F81F2B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F2E22F-12DC-4BEF-876B-EFF16F81F2B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F2E22F-12DC-4BEF-876B-EFF16F81F2B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
