@@ -1,9 +1,11 @@
-﻿using CodeAnalyzer.Models;
+﻿using CodeAnalyzer.CustomAttributes;
+using CodeAnalyzer.Models;
 
 namespace CodeAnalyzer.Repositories
 {
+    //[TestOnly]
     public interface IContactRepository
     {
-        Contact Get();
+        public Contact Get();
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Collections.Immutable;
 using System.Linq;
@@ -32,21 +34,22 @@ namespace Analyzers
 
             // TODO: Consider registering other actions that act on syntax instead of or in addition to symbols
             // See https://github.com/dotnet/roslyn/blob/main/docs/analyzers/Analyzer%20Actions%20Semantics.md for more information
-            context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.NamedType);
+            context.RegisterSyntaxNodeAction(AnalyzeSyntaxNode, SyntaxKind.ObjectCreationExpression);
         }
 
-        private static void AnalyzeSymbol(SymbolAnalysisContext context)
+        private void AnalyzeSyntaxNode(SyntaxNodeAnalysisContext context)
         {
-            // TODO: Replace the following code with your own analysis, generating Diagnostic objects for any issues you find
-            var namedTypeSymbol = (INamedTypeSymbol)context.Symbol;
-
-            // Find just those named type symbols with names containing lowercase letters.
-            if (namedTypeSymbol.Name.ToCharArray().Any(char.IsLower))
+            if (context.Node is ObjectCreationExpressionSyntax objectCreationExpression)
             {
-                // For all such symbols, produce a diagnostic.
-                var diagnostic = Diagnostic.Create(Rule, namedTypeSymbol.Locations[0], namedTypeSymbol.Name);
+                string[] attributeNames = new string[] { "TestOnly", "TestOnlyAttribute" };
 
-                context.ReportDiagnostic(diagnostic);
+                var symbol = context.SemanticModel.GetSymbolInfo(objectCreationExpression).Symbol;
+                if (symbol != null &&
+                    symbol.ContainingType != null &&
+                    symbol.ContainingType.GetAttributes().Any(attr => attributeNames.Contains(attr.AttributeClass.Name)))
+                {
+                    context.ReportDiagnostic(Diagnostic.Create(Rule, objectCreationExpression.GetLocation(), symbol.ContainingType.Name));
+                }
             }
         }
     }

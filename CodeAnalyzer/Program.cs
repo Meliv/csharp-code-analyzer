@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    private static void Main(string[] _)
     {
         ServiceProvider serviceProvider = new ServiceCollection()
             .AddTransient<IContactRepository, ContactRepository>()
@@ -13,7 +13,7 @@ internal class Program
 
         IContactRepository contactRepository = serviceProvider.GetRequiredService<IContactRepository>();
 
-        Analyzer analyzer = new Analyzer(contactRepository);
+        Analyzer analyzer = new(contactRepository);
 
         analyzer.Invoke();
     }
