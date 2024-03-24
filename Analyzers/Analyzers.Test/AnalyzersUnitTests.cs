@@ -65,10 +65,10 @@ namespace CodeAnalyzer.Analyzers.Test
             {
                 public class Test
                 {
-                    public Test(Dependency dep) { }
+                    public Test(IInterface dep) { }
                 }
 
-                public class Dependency
+                public interface IInterface
                 {
                 }
             }";
