@@ -1,5 +1,5 @@
 ﻿namespace CodeAnalyzer.CustomAttributes
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface)]
+    [AttributeUsage(AttributeTargets.Interface)]
     public class TestOnlyAttribute : Attribute { }
 }

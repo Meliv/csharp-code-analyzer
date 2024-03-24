@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AnalyzerDescription" xml:space="preserve">
-    <value>TestOnly is only for use in classes and interfaces that are used in non-release code</value>
+    <value>TestOnlyAttribute is only for use in classes and interfaces that are not used in release code. If this dependency is not being used in release code consider adding a pragma exception around this initialisation</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="AnalyzerMessageFormat" xml:space="preserve">
-    <value>Type name '{0}' contains lowercase letters (Format this)</value>
+    <value>Type '{0}' should not be used for production code. See description</value>
     <comment>The format-able message the diagnostic displays.</comment>
   </data>
   <data name="AnalyzerTitle" xml:space="preserve">
-    <value>Types cannot use TestOnly attribute</value>
+    <value>Types with TestOnlyAttribute cannot be used in production code</value>
     <comment>The title of the diagnostic.</comment>
   </data>
 </root>

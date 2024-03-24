@@ -3,7 +3,7 @@ using CodeAnalyzer.Models;
 
 namespace CodeAnalyzer.Repositories
 {
-    //[TestOnly]
+    [TestOnly]
     public interface IContactRepository
     {
         public Contact Get();

@@ -61,7 +61,7 @@ namespace Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TestOnly is only for use in classes and interfaces that are used in non-release code.
+        ///   Looks up a localized string similar to TestOnlyAttribute is only for use in classes and interfaces that are not used in release code. If this dependency is not being used in release code consider adding a pragma exception around this initialisation.
         /// </summary>
         internal static string AnalyzerDescription {
             get {
@@ -70,7 +70,7 @@ namespace Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type name &apos;{0}&apos; contains lowercase letters (Format this).
+        ///   Looks up a localized string similar to Type &apos;{0}&apos; should not be used for production code. See description.
         /// </summary>
         internal static string AnalyzerMessageFormat {
             get {
@@ -79,7 +79,7 @@ namespace Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Types cannot use TestOnly attribute.
+        ///   Looks up a localized string similar to Types with TestOnlyAttribute cannot be used in production code.
         /// </summary>
         internal static string AnalyzerTitle {
             get {
