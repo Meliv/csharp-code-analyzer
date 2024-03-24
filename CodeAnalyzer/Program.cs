@@ -13,7 +13,7 @@ internal class Program
 
         IContactRepository contactRepository = serviceProvider.GetRequiredService<IContactRepository>();
 
-        Analyzer analyzer = new(contactRepository);
+        Analysis analyzer = new(contactRepository);
 
         analyzer.Invoke();
     }

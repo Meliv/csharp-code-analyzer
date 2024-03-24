@@ -3,12 +3,12 @@ using CodeAnalyzer.Repositories;
 
 namespace CodeAnalyzer;
 
-public class Analyzer
+public class Analysis
 {
     private readonly IContactRepository _contactRepository;
 
 #pragma warning disable MLV001 // Types with TestOnlyAttribute cannot be used in production code
-    public Analyzer(IContactRepository contactRepository)
+    public Analysis(IContactRepository contactRepository)
 #pragma warning restore MLV001 // Types with TestOnlyAttribute cannot be used in production code
     {
         _contactRepository = contactRepository;
