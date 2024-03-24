@@ -2,17 +2,15 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
-using System;
 using System.Collections.Immutable;
-using System.Diagnostics;
 using System.Linq;
 
 namespace Analyzers
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class AnalyzersAnalyzer : DiagnosticAnalyzer
+    public class TestOnlyAnalyzer : DiagnosticAnalyzer
     {
-        public const string DiagnosticId = "MST001";
+        public const string DiagnosticId = "MLV001";
         private static readonly LocalizableString Title = new LocalizableResourceString(nameof(Resources.AnalyzerTitle), Resources.ResourceManager, typeof(Resources));
         private static readonly LocalizableString MessageFormat = new LocalizableResourceString(nameof(Resources.AnalyzerMessageFormat), Resources.ResourceManager, typeof(Resources));
         private static readonly LocalizableString Description = new LocalizableResourceString(nameof(Resources.AnalyzerDescription), Resources.ResourceManager, typeof(Resources));
@@ -61,7 +59,7 @@ namespace Analyzers
                             Rule,
                             parameterSyntax.GetLocation(),
                             parameterSyntax.Type.TryGetInferredMemberName());
-                        
+
                         context.ReportDiagnostic(diagnostic);
                     }
                 }
@@ -70,21 +68,16 @@ namespace Analyzers
 
         private bool HasForbiddenAttribute(SyntaxNodeAnalysisContext context, TypeSyntax typeSyntax)
         {
-            var semanticModel = context.SemanticModel;
-
             // Get the type symbol for the type represented by the TypeSyntax
-            var typeSymbol = semanticModel.GetTypeInfo(typeSyntax).Type;
+            ITypeSymbol typeSymbol = context.SemanticModel.GetTypeInfo(typeSyntax).Type;
 
             if (typeSymbol != null && typeSymbol is INamedTypeSymbol namedTypeSymbol)
             {
+                string[] testOnlyAttributeNames = new[] { "TestOnly", "TestOnlyAttribute" };
                 // Get custom attributes applied to the type symbol
-                var attributes = namedTypeSymbol.GetAttributes();
-
-                // Check if the type has specific custom attributes
-                if (attributes.Any(attr => attr.AttributeClass.Name == "TestOnly" || attr.AttributeClass.Name == "TestOnlyAttribute"))
-                {
-                    return true;
-                }
+                return namedTypeSymbol
+                    .GetAttributes()
+                    .Any(attr => testOnlyAttributeNames.Contains(attr.AttributeClass.Name));
             }
 
             return false;

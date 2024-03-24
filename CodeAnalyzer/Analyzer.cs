@@ -7,9 +7,9 @@ public class Analyzer
 {
     private readonly IContactRepository _contactRepository;
 
-#pragma warning disable MST001 // Types with TestOnlyAttribute cannot be used in production code
+#pragma warning disable MLV001 // Types with TestOnlyAttribute cannot be used in production code
     public Analyzer(IContactRepository contactRepository)
-#pragma warning restore MST001 // Types with TestOnlyAttribute cannot be used in production code
+#pragma warning restore MLV001 // Types with TestOnlyAttribute cannot be used in production code
     {
         _contactRepository = contactRepository;
     }
