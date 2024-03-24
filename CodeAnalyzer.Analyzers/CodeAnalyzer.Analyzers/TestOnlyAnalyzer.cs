@@ -35,7 +35,7 @@ namespace CodeAnalyzer.Analyzers
 
         private void AnalyzeNode(SyntaxNodeAnalysisContext context)
         {
-            var constructorSyntax = (ConstructorDeclarationSyntax)context.Node;
+            ConstructorDeclarationSyntax constructorSyntax = (ConstructorDeclarationSyntax)context.Node;
 
             // Check if the constructor is part of a class declaration
             if (!(constructorSyntax.Parent is ClassDeclarationSyntax))
@@ -46,7 +46,7 @@ namespace CodeAnalyzer.Analyzers
                 return;
 
             // Check each constructor parameter
-            foreach (var parameterSyntax in constructorSyntax.ParameterList.Parameters)
+            foreach (ParameterSyntax parameterSyntax in constructorSyntax.ParameterList.Parameters)
             {
                 // Check if the parameter has a parent that is a ParameterListSyntax (this indicates a constructor parameter)
                 if (parameterSyntax.Parent is ParameterListSyntax)

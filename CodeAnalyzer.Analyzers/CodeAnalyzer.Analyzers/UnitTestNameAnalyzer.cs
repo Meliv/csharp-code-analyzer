@@ -39,12 +39,21 @@ namespace CodeAnalyzer.Analyzers
             MethodDeclarationSyntax methodDeclaration = (MethodDeclarationSyntax)context.Node;
 
             string methodName = methodDeclaration.Identifier.Text;
-
-            if (!Regex.IsMatch(methodName, @"^[^_]+_[^_]+_[^_]+$"))
+            
+            if (IsTestMethod(methodDeclaration) && !Regex.IsMatch(methodName, @"^[^_]+_[^_]+_[^_]+$"))
             {
                 var diagnostic = Diagnostic.Create(Rule, methodDeclaration.Identifier.GetLocation(), methodName);
                 context.ReportDiagnostic(diagnostic);
             }
+        }
+
+        private bool IsTestMethod(MethodDeclarationSyntax methodDeclaration)
+        {
+            string[] testAttributes = new[] { "Fact", "Theory" };
+
+            return methodDeclaration.AttributeLists
+                .SelectMany(attributeList => attributeList.Attributes)
+                .Any(attribute => testAttributes.Contains(attribute.Name.ToString()));
         }
     }
 }
