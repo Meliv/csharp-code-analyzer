@@ -63,27 +63,54 @@ namespace CodeAnalyzer.Analyzers {
         /// <summary>
         ///   Looks up a localized string similar to TestOnlyAttribute is only for use in classes and interfaces that are not used in release code. If this dependency is not being used in release code consider adding a pragma exception around this initialisation.
         /// </summary>
-        internal static string AnalyzerDescription {
+        internal static string MLV001Description {
             get {
-                return ResourceManager.GetString("AnalyzerDescription", resourceCulture);
+                return ResourceManager.GetString("MLV001Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Type &apos;{0}&apos; should not be used for production code. See description.
         /// </summary>
-        internal static string AnalyzerMessageFormat {
+        internal static string MLV001MessageFormat {
             get {
-                return ResourceManager.GetString("AnalyzerMessageFormat", resourceCulture);
+                return ResourceManager.GetString("MLV001MessageFormat", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Types with TestOnlyAttribute cannot be used in production code.
         /// </summary>
-        internal static string AnalyzerTitle {
+        internal static string MLV001Title {
             get {
-                return ResourceManager.GetString("AnalyzerTitle", resourceCulture);
+                return ResourceManager.GetString("MLV001Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test requires naming convention of Method_Scenario_Result.
+        /// </summary>
+        internal static string MLV002Description {
+            get {
+                return ResourceManager.GetString("MLV002Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test &apos;{0}&apos; has invalid naming convention. See description.
+        /// </summary>
+        internal static string MLV002MessageFormat {
+            get {
+                return ResourceManager.GetString("MLV002MessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test with invalid name.
+        /// </summary>
+        internal static string MLV002Title {
+            get {
+                return ResourceManager.GetString("MLV002Title", resourceCulture);
             }
         }
     }
