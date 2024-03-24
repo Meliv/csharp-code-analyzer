@@ -4,7 +4,7 @@ Prevents an interface tagged with the TestOnlyAttribute from being used as an in
 
 ## Build Status
 
-[![CodeAnalyzer Unit Tests](https://github.com/Meliv/csharp-code-analyzer/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/Meliv/csharp-code-analyzer/actions/workflows/dotnet-desktop.yml)
+[![build](https://github.com/Meliv/csharp-code-analyzer/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/Meliv/csharp-code-analyzer/actions/workflows/dotnet-desktop.yml)
 
 ## Usage
  
