@@ -2,11 +2,11 @@
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using VerifyCS = Analyzers.Test.CSharpCodeFixVerifier<
-    Analyzers.TestOnlyAnalyzer,
-    Analyzers.AnalyzersCodeFixProvider>;
+using VerifyCS = CodeAnalyzer.Analyzers.Test.CSharpCodeFixVerifier<
+    CodeAnalyzer.Analyzers.TestOnlyAnalyzer,
+    CodeAnalyzer.Analyzers.AnalyzersCodeFixProvider>;
 
-namespace Analyzers.Test
+namespace CodeAnalyzer.Analyzers.Test
 {
     [TestClass]
     public class TestOnlyAnalyzerTests

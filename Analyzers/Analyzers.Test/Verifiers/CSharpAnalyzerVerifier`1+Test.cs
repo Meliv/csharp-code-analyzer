@@ -1,8 +1,9 @@
-﻿using Microsoft.CodeAnalysis.CSharp.Testing;
+﻿using CodeAnalyzer.Analyzers.Test.Verifiers;
+using Microsoft.CodeAnalysis.CSharp.Testing;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Testing.Verifiers;
 
-namespace Analyzers.Test
+namespace CodeAnalyzer.Analyzers.Test
 {
     public static partial class CSharpAnalyzerVerifier<TAnalyzer>
         where TAnalyzer : DiagnosticAnalyzer, new()

@@ -11,15 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzer.Repositories",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzers", "Analyzers", "{B4D1BD92-F55A-41D8-80FB-19CD5D277ABC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analyzers", "Analyzers\Analyzers\Analyzers.csproj", "{B22A0641-D247-40A3-B09E-83E312B03496}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzer.Analyzers", "Analyzers\Analyzers\CodeAnalyzer.Analyzers.csproj", "{B22A0641-D247-40A3-B09E-83E312B03496}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analyzers.CodeFixes", "Analyzers\Analyzers.CodeFixes\Analyzers.CodeFixes.csproj", "{017EDA38-C546-4BF6-8BFC-7792A03DE589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzer.Analyzers.CodeFixes", "Analyzers\Analyzers.CodeFixes\CodeAnalyzer.Analyzers.CodeFixes.csproj", "{017EDA38-C546-4BF6-8BFC-7792A03DE589}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analyzers.Package", "Analyzers\Analyzers.Package\Analyzers.Package.csproj", "{95F0492F-7B60-4EE3-9D0A-2431409469DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzer.Analyzers.Package", "Analyzers\Analyzers.Package\CodeAnalyzer.Analyzers.Package.csproj", "{95F0492F-7B60-4EE3-9D0A-2431409469DD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analyzers.Test", "Analyzers\Analyzers.Test\Analyzers.Test.csproj", "{C20675E2-2A3F-482F-8564-06973DAC041D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzer.Analyzers.Test", "Analyzers\Analyzers.Test\CodeAnalyzer.Analyzers.Test.csproj", "{C20675E2-2A3F-482F-8564-06973DAC041D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analyzers.Vsix", "Analyzers\Analyzers.Vsix\Analyzers.Vsix.csproj", "{FD2E8BFC-6BF6-40BE-B9A7-61EBCA3F77BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzer.Analyzers.Vsix", "Analyzers\Analyzers.Vsix\CodeAnalyzer.Analyzers.Vsix.csproj", "{FD2E8BFC-6BF6-40BE-B9A7-61EBCA3F77BD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzer.CustomAttributes", "CodeAnalyzer.CustomAttributes\CodeAnalyzer.CustomAttributes.csproj", "{00551CE9-D750-44BD-A7DB-36456C50902C}"
 EndProject

@@ -1,8 +1,9 @@
-﻿using Microsoft.CodeAnalysis.CodeRefactorings;
+﻿using CodeAnalyzer.Analyzers.Test.Verifiers;
+using Microsoft.CodeAnalysis.CodeRefactorings;
 using Microsoft.CodeAnalysis.CSharp.Testing;
 using Microsoft.CodeAnalysis.Testing.Verifiers;
 
-namespace Analyzers.Test
+namespace CodeAnalyzer.Analyzers.Test
 {
     public static partial class CSharpCodeRefactoringVerifier<TCodeRefactoring>
         where TCodeRefactoring : CodeRefactoringProvider, new()

@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.Testing.Verifiers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Analyzers.Test
+namespace CodeAnalyzer.Analyzers.Test
 {
     public static partial class CSharpAnalyzerVerifier<TAnalyzer>
         where TAnalyzer : DiagnosticAnalyzer, new()
