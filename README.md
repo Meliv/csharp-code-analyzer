@@ -2,6 +2,10 @@
 
 Prevents an interface tagged with the TestOnlyAttribute from being used as an injected dependency. Visual Studio will provide an error when the dependency is injected into a consuming class.
 
+## Build Status
+
+[![CodeAnalyzer Unit Tests](https://github.com/Meliv/csharp-code-analyzer/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/Meliv/csharp-code-analyzer/actions/workflows/dotnet-desktop.yml)
+
 ## Usage
  
 The solution contains a console application package that contains a basic dependency injection scenario where interface **IContactRepository** is being injected into the **Analysis** class.
