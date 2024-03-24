@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github", "Github", "{CF2C82
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{56186A93-3758-4FF1-BB3D-0329B55BF236}"
+	ProjectSection(SolutionItems) = preProject
+		builderror.PNG = builderror.PNG
+		directive.PNG = directive.PNG
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

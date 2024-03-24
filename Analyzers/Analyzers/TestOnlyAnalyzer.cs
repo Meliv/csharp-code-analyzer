@@ -38,8 +38,7 @@ namespace Analyzers
             var constructorSyntax = (ConstructorDeclarationSyntax)context.Node;
 
             // Check if the constructor is part of a class declaration
-            var classSyntax = constructorSyntax.Parent as ClassDeclarationSyntax;
-            if (classSyntax == null)
+            if (!(constructorSyntax.Parent is ClassDeclarationSyntax))
                 return;
 
             // Check if the constructor has parameters

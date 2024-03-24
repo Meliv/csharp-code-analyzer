@@ -14,8 +14,9 @@ The analyzer has been added to the console application as a project reference bu
 
 ![Pragma directive](directive.PNG)
 
+## Build Error
 
-## Build Errors 
+![Build error](builderror.PNG)
 
 ## Unit Tests
 Along with the functional test above, the solution also contains a unit test project where we can test the analyser.
