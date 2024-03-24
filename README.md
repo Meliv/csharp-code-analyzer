@@ -1,6 +1,6 @@
-# Forbidden Custom Attribute Analyzer
+# Prohibited Attribute Analyzer
 
-Prevents an interface tagged with the TestOnlyAttribute from being used as an injected dependency. Visual Studio will provide an error when the dependency is initialised.
+Prevents an interface tagged with the TestOnlyAttribute from being used as an injected dependency. Visual Studio will provide an error when the dependency is injected into a consuming class.
 
 ## Usage
  
