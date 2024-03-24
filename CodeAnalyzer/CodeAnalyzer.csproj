@@ -12,7 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Analyzers\Analyzers\CodeAnalyzer.Analyzers.csproj" >
+		<ProjectReference Include="..\CodeAnalyzer.Analyzers\CodeAnalyzer.Analyzers\CodeAnalyzer.Analyzers.csproj" >
 			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
 			<OutputItemType>Analyzer</OutputItemType>
 		</ProjectReference>

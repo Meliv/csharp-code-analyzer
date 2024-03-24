@@ -27,8 +27,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Analyzers.CodeFixes\CodeAnalyzer.Analyzers.CodeFixes.csproj" />
-    <ProjectReference Include="..\Analyzers\CodeAnalyzer.Analyzers.csproj" />
+    <ProjectReference Include="..\CodeAnalyzer.Analyzers.CodeFixes\CodeAnalyzer.Analyzers.CodeFixes.csproj" />
+    <ProjectReference Include="..\CodeAnalyzer.Analyzers\CodeAnalyzer.Analyzers.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Analyzers\CodeAnalyzer.Analyzers.csproj" />
+    <ProjectReference Include="..\CodeAnalyzer.Analyzers\CodeAnalyzer.Analyzers.csproj" />
   </ItemGroup>
 
   <ItemGroup>
