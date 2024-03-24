@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Testing;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = Analyzers.Test.CSharpCodeFixVerifier<
     Analyzers.TestOnlyAnalyzer,
@@ -7,53 +9,79 @@ using VerifyCS = Analyzers.Test.CSharpCodeFixVerifier<
 namespace Analyzers.Test
 {
     [TestClass]
-    public class AnalyzersUnitTest
+    public class TestOnlyAnalyzerTests
     {
-        //No diagnostics expected to show up
         [TestMethod]
-        public async Task TestMethod1()
+        public async Task InjectedReferenceToProhibitedInterface_DiagnosticRaised()
         {
-            var test = @"";
+            string testCode = @"
+            using System;
+            
+            namespace TestNamespace
+            {
+                public class Test
+                {
+                    private readonly IInterface _testInterface;
 
-            await VerifyCS.VerifyAnalyzerAsync(test);
+                    public Test(IInterface testInterface) => _testInterface = testInterface;
+                }
+
+                [TestOnly]
+                public interface IInterface { }
+
+                [AttributeUsage(AttributeTargets.Interface)]
+                public class TestOnlyAttribute : Attribute { }
+            }";
+
+            DiagnosticResult expectedDiagnostic = new DiagnosticResult("MLV001", DiagnosticSeverity.Error)
+                .WithSpan(10, 33, 10, 57)
+                .WithArguments("IInterface");
+
+            await VerifyCS.VerifyAnalyzerAsync(testCode, expectedDiagnostic);
         }
 
-        //Diagnostic and CodeFix both triggered and checked for
         [TestMethod]
-        public async Task TestMethod2()
+        public async Task ClassWithConstructorButNoDependencies_NoDiagnostic()
         {
-            var test = @"
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
+            string testCode = @"
+            using System;
+            namespace TestNamespace
+            {
+                public class Test
+                {
+                    public Test() { }
+                }
+            }";
 
-    namespace ConsoleApplication1
-    {
-        class {|#0:TypeName|}
-        {   
+            await VerifyCS.VerifyAnalyzerAsync(testCode);
         }
-    }";
 
-            var fixtest = @"
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
+        [TestMethod]
+        public async Task ClassWithConstructorAndDependencies_NoDiagnostic()
+        {
+            string testCode = @"
+            using System;
+            namespace TestNamespace
+            {
+                public class Test
+                {
+                    public Test(Dependency dep) { }
+                }
 
-    namespace ConsoleApplication1
-    {
-        class TYPENAME
-        {   
+                public class Dependency
+                {
+                }
+            }";
+
+            await VerifyCS.VerifyAnalyzerAsync(testCode);
         }
-    }";
 
-            var expected = VerifyCS.Diagnostic("Analyzers").WithLocation(0).WithArguments("TypeName");
-            await VerifyCS.VerifyCodeFixAsync(test, expected, fixtest);
+        [TestMethod]
+        public async Task EmptyCodeBlock_NoDiagnostic()
+        {
+            string testCode = @"";
+
+            await VerifyCS.VerifyAnalyzerAsync(testCode);
         }
     }
 }
