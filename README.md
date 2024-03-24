@@ -20,7 +20,8 @@ The analyzer has been added to the console application as a project reference bu
 
 ## Unit Tests
 Along with the functional test above, the solution also contains a unit test project where we can test the analyser.
->Todo: Implement unit tests
+
+To do this, we provide a test class in a string which is compiled and checked for diagnostics
 
 ## Code Fix
 The analyzer project template comes bundled with a Code Fix project. This project contains the logic that executes when you allow Visual Studio to automatically fix your analysis issues. In this scenario, we don't want to fix anything as it's up to the developer to add a pragma directive if required. 
