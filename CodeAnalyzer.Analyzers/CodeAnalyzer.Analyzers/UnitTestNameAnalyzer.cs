@@ -49,7 +49,7 @@ namespace CodeAnalyzer.Analyzers
 
         private bool IsTestMethod(MethodDeclarationSyntax methodDeclaration)
         {
-            string[] testAttributes = new[] { "Fact", "Theory" };
+            string[] testAttributes = new[] { "Fact", "Theory", "TestMethod" };
 
             return methodDeclaration.AttributeLists
                 .SelectMany(attributeList => attributeList.Attributes)

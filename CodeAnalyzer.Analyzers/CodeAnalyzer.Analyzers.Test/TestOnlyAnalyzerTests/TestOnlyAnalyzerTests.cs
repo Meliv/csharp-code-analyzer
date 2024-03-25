@@ -6,7 +6,7 @@ using VerifyCS = CodeAnalyzer.Analyzers.Test.CSharpCodeFixVerifier<
     CodeAnalyzer.Analyzers.TestOnlyAnalyzer,
     CodeAnalyzer.Analyzers.AnalyzersCodeFixProvider>;
 
-namespace CodeAnalyzer.Analyzers.Test
+namespace CodeAnalyzer.Analyzers.Test.TestOnlyAnalyzerTests
 {
     [TestClass]
     public class TestOnlyAnalyzerTests
