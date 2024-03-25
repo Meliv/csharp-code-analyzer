@@ -30,11 +30,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github", "Github", "{CF2C82
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{56186A93-3758-4FF1-BB3D-0329B55BF236}"
 	ProjectSection(SolutionItems) = preProject
-		builderror.PNG = builderror.PNG
-		directive.PNG = directive.PNG
+		testonlybuilderror.PNG = testonlybuilderror.PNG
+		testonlydirective.PNG = testonlydirective.PNG
+		unittestnamedirective.PNG = unittestnamedirective.PNG
+		unittestnamebuildwarning.PNG = unittestnamebuildwarning.PNG
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAnalyzer.Tests", "CodeAnalyzer.Tests\CodeAnalyzer.Tests.csproj", "{4E4DB3F3-3744-495B-A3A1-91BD61D7D542}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzer.Tests", "CodeAnalyzer.Tests\CodeAnalyzer.Tests.csproj", "{4E4DB3F3-3744-495B-A3A1-91BD61D7D542}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
