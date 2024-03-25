@@ -1,3 +1,5 @@
+#pragma warning disable IDE1006 // Naming Styles
+#pragma warning disable MLV002 // Test with invalid name
 namespace CodeAnalyzer.Tests
 {
     public class AlwaysTrueTests

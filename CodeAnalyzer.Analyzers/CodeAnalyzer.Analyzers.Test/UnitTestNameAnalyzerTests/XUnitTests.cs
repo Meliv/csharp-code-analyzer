@@ -112,7 +112,7 @@ namespace CodeAnalyzer.Analyzers.Test.UnitTestNameAnalyzerTests
             Assert.Empty(diagnostics);
         }
 
-        private Task<ImmutableArray<Diagnostic>> GetDiagnostics(string testCode)
+        private static Task<ImmutableArray<Diagnostic>> GetDiagnostics(string testCode)
         {
             // As the code above is compiled from a string in sandbox and uses Xunit,
             // we need to instruct the code analysis assembly to manually
